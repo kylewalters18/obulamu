@@ -4,14 +4,14 @@ const path = require('path');
 // boolean switch for prod/dev to avoid the need for ENV variables
 const prod = process.argv.indexOf('-p') !== -1;
 
-const BUILD_DIR = path.resolve(__dirname, 'app/client/public');
-const APP_DIR = path.resolve(__dirname, 'app/client/app');
+const BUILD_DIR = path.resolve(__dirname, 'obulamu/client/public');
+const APP_DIR = path.resolve(__dirname, 'obulamu/client/app');
 
 const config = {
   entry: `${APP_DIR}/index.jsx`,
   output: {
     path: BUILD_DIR,
-    publicPath: 'app/client/public',
+    publicPath: 'obulamu/client/public',
     filename: 'bundle.js',
   },
   module: {

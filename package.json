@@ -6,10 +6,10 @@
   "scripts": {
     "test": "jest",
     "test:watch": "npm test -- --watch",
-    "lint": "eslint -c .eslintrc --ext .jsx app/client/app/**",
+    "lint": "eslint -c .eslintrc --ext .jsx obulamu/client/app/**",
     "dev": "webpack -d --watch",
     "build": "webpack -p",
-    "start": "webpack-dev-server --content-base app/client/public --inline --hot"
+    "start": "webpack-dev-server --content-base obulamu/client/public --inline --hot"
   },
   "repository": {
     "type": "git",
