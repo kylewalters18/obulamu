@@ -1,6 +1,6 @@
 from django.conf.urls import url, include
 from rest_framework import routers
-from server.medical_charting import views
+from server.app import views
 
 router = routers.DefaultRouter()
 router.register(r'patients', views.PatientViewSet)

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from server.medical_charting.models import Patient
+from server.app.models import Patient
 
 
 class PatientSerializer(serializers.ModelSerializer):

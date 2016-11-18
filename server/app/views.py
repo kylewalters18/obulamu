@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from server.medical_charting.serializers import PatientSerializer
-from server.medical_charting.models import Patient
+from server.app.serializers import PatientSerializer
+from server.app.models import Patient
 
 
 class PatientViewSet(viewsets.ModelViewSet):
