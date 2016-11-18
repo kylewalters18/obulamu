@@ -1,17 +1,17 @@
-import {applyMiddleware, createStore} from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 
-import App from 'components/app';
-import {Provider} from 'react-redux';
+import AppContainer from 'containers/app-container';
+import { Provider } from 'react-redux';
 import React from 'react';
 import reducer from 'reducers';
-import {render} from 'react-dom';
+import { render } from 'react-dom';
 import thunk from 'redux-thunk';
 
 const store = applyMiddleware(thunk)(createStore)(reducer);
 
 render(
   <Provider store={store}>
-    <App />
+    <AppContainer />
   </Provider>,
   document.getElementById('app')
 );
