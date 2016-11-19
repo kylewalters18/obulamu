@@ -17,6 +17,12 @@ npm start
 visit your app at localhost:8080
 ```
 
+Update and run migrations
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
 Start the Django Web Server
 ```bash
 cd obulamu
