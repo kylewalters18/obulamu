@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
 
+import { Link } from 'react-router';
+
 class App extends React.Component {
 
   componentDidMount() {
@@ -11,9 +13,16 @@ class App extends React.Component {
       <div>
         <h1>Medical Charting</h1>
         <br />
-        {this.props.patients.map((d, i) =>
-          <div key={i}>{d.first_name} {d.last_name}, {d.age}</div>
-        )}
+        <div>First Name, Last Name, Age</div>
+        <ul>
+          {this.props.patients.map((d, i) =>
+            <li key={i}>
+              <Link to={`/patient/${d.id}`}>
+                {d.first_name} {d.last_name}, {d.age}
+              </Link>
+            </li>
+          )}
+        </ul>
       </div>
     );
   }
