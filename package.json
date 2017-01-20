@@ -9,7 +9,7 @@
     "lint": "eslint -c .eslintrc --ext .jsx client/app/**",
     "dev": "webpack -d --watch",
     "build": "webpack -p",
-    "start": "webpack-dev-server --content-base client/public --inline --hot"
+    "start": "webpack-dev-server --content-base client/public --inline --hot --history-api-fallback"
   },
   "repository": {
     "type": "git",
