@@ -13,6 +13,9 @@ class App extends React.Component {
       <div>
         <h1>Medical Charting</h1>
         <br />
+        Search
+        <input type="text" onKeyUp={event => this.props.setPatientFilter(event.target.value)} />
+        <br />
         <div>First Name, Last Name, Age</div>
         <ul>
           {this.props.patients.map((d, i) =>
@@ -31,6 +34,7 @@ class App extends React.Component {
 App.propTypes = {
   patients: PropTypes.arrayOf(PropTypes.object).isRequired,
   loadPatients: PropTypes.func.isRequired,
+  setPatientFilter: PropTypes.func.isRequired,
 };
 
 export default App;

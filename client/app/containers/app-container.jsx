@@ -1,16 +1,22 @@
+import { loadPatients, setPatientFilter } from 'actions';
+
 import App from 'components/app';
 import { connect } from 'react-redux';
-import { loadPatients } from 'actions';
 
 function mapStateToProps(state) {
   return {
-    patients: state.patients.patients,
+    patients: state.patients.patients.filter(
+      d =>
+        d.first_name.toLowerCase().includes(state.patients.filter) ||
+        d.last_name.toLowerCase().includes(state.patients.filter)
+    ),
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     loadPatients: () => dispatch(loadPatients()),
+    setPatientFilter: filter => dispatch(setPatientFilter(filter)),
   };
 }
 

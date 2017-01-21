@@ -10,8 +10,9 @@ function makeActionCreator(type, ...argNames) {
   };
 }
 
-export const receivePatients = makeActionCreator('RECEIVE_PATIENTS', 'patients');
+export const setPatientFilter = makeActionCreator('SET_PATIENT_FILTER', 'filter');
 
+export const receivePatients = makeActionCreator('RECEIVE_PATIENTS', 'patients');
 export function loadPatients() {
   return (dispatch) => {
     // async call to get the new data
