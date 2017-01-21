@@ -1,6 +1,6 @@
 import App from 'components/app';
 import { connect } from 'react-redux';
-import { loadPatients } from 'actions';
+import { loadPatients } from 'actions/patient';
 
 function mapStateToProps() {
   return {};
