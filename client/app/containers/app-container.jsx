@@ -2,7 +2,7 @@ import App from 'components/app';
 import { connect } from 'react-redux';
 import { loadPatients } from 'actions';
 
-function mapStateToProps(state) {
+function mapStateToProps() {
   return {};
 }
 
