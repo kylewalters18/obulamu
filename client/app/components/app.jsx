@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 
+import AppBar from 'material-ui/AppBar';
 import PatientFilterContainer from 'containers/patient-filter-container';
 import PatientListContainer from 'containers/patient-list-container';
 
@@ -12,7 +13,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Medical Charting</h1>
+        <AppBar
+          title="Obulamu"
+          iconClassNameRight="muidocs-icon-navigation-expand-more"
+        />
         <br />
         <PatientFilterContainer />
         <br />
