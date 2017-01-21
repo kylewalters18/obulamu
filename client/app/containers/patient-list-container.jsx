@@ -4,10 +4,12 @@ import { connect } from 'react-redux';
 function mapStateToProps(state) {
   return {
     patients: state.patients.patients.filter(
-      d =>
-        d.first_name.toLowerCase().includes(state.patients.filter) ||
-        d.last_name.toLowerCase().includes(state.patients.filter)
-    ),
+      d => `${d.first_name} ${d.last_name}`
+              .toLowerCase()
+              .includes(
+                state.patients.filter
+              )
+      ),
   };
 }
 
