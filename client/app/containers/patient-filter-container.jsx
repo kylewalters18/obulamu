@@ -1,6 +1,6 @@
 import PatientFilter from 'components/patient-filter';
 import { connect } from 'react-redux';
-import { setPatientFilter } from 'actions';
+import { setPatientFilter } from 'actions/patient';
 
 function mapStateToProps() {
   return {};
