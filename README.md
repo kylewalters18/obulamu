@@ -25,7 +25,6 @@ python manage.py migrate
 
 Start the Django Web Server
 ```bash
-cd obulamu
 python manage.py runserver
 visit your api at localhost:8000
 ```
