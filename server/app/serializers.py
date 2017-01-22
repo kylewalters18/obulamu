@@ -30,7 +30,7 @@ class PatientSerializer(serializers.ModelSerializer):
         fields = ('id',
                   'first_name',
                   'last_name',
-                  'age',
+                  'address',
                   'dob',
                   'medications',
                   'visits',
@@ -52,4 +52,3 @@ class PatientSerializer(serializers.ModelSerializer):
             Treatment.objects.create(patient=patient, **treatment_data)
 
         return patient
-
