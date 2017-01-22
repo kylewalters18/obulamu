@@ -7,6 +7,8 @@ function mapStateToProps(state, ownProps) {
   return {
     firstName: patient.first_name,
     lastName: patient.last_name,
+    address: patient.address,
+    dob: patient.dob,
   };
 }
 
