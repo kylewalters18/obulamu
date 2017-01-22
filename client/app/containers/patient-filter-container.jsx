@@ -1,6 +1,6 @@
 import PatientFilter from 'components/patient-filter';
 import { connect } from 'react-redux';
-import { setPatientFilter } from 'actions/patient';
+import { updatePatientFilter } from 'actions/patient';
 
 function mapStateToProps() {
   return {};
@@ -8,7 +8,7 @@ function mapStateToProps() {
 
 function mapDispatchToProps(dispatch) {
   return {
-    setPatientFilter: filter => dispatch(setPatientFilter(filter)),
+    updatePatientFilter: filter => dispatch(updatePatientFilter(filter)),
   };
 }
 

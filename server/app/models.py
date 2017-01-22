@@ -3,9 +3,8 @@ from django.db import models
 class Patient(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    age = models.IntegerField()
+    address = models.CharField(max_length=60)
     dob = models.DateField(default='1984-01-01')
-    phone_number = models.IntegerField(default=0)
 
 
 class Medication(models.Model):
@@ -27,5 +26,3 @@ class Treatment(models.Model):
     date = models.DateField(default='2016-11-16')
     description = models.CharField(max_length=2000)
     patient = models.ForeignKey(Patient, related_name='treatments', on_delete=models.CASCADE)
-
-

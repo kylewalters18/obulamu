@@ -1,4 +1,10 @@
-import { addPatient, setFirstName, setLastName } from 'actions/new-patient';
+import {
+  addPatient,
+  updateAddress,
+  updateDOB,
+  updateFirstName,
+  updateLastName,
+} from 'actions/new-patient';
 
 import NewPatient from 'components/new-patient';
 import { connect } from 'react-redux';
@@ -7,14 +13,19 @@ function mapStateToProps(state) {
   return {
     firstName: state.newPatient.firstName,
     lastName: state.newPatient.lastName,
+    address: state.newPatient.address,
+    dob: state.newPatient.dob,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    setFirstName: firstName => dispatch(setFirstName(firstName)),
-    setLastName: lastName => dispatch(setLastName(lastName)),
-    addPatient: (firstName, lastName) => dispatch(addPatient(firstName, lastName)),
+    updateFirstName: firstName => dispatch(updateFirstName(firstName)),
+    updateLastName: lastName => dispatch(updateLastName(lastName)),
+    updateAddress: address => dispatch(updateAddress(address)),
+    updateDOB: dob => dispatch(updateDOB(dob)),
+    addPatient: (firstName, lastName, address, dob) =>
+      dispatch(addPatient(firstName, lastName, address, dob)),
   };
 }
 

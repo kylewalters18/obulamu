@@ -1,7 +1,7 @@
 import axios from 'axios';
 import makeActionCreator from 'actions/util';
 
-export const setPatientFilter = makeActionCreator('SET_PATIENT_FILTER', 'filter');
+export const updatePatientFilter = makeActionCreator('UPDATE_PATIENT_FILTER', 'filter');
 
 const receivePatients = makeActionCreator('RECEIVE_PATIENTS', 'patients');
 export const loadPatients = () => (dispatch) => {

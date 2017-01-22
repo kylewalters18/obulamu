@@ -5,7 +5,7 @@ const patients = (state = {
   switch (action.type) {
     case 'RECEIVE_PATIENTS':
       return { ...state, patients: action.patients };
-    case 'SET_PATIENT_FILTER':
+    case 'UPDATE_PATIENT_FILTER':
       return { ...state, filter: action.filter.toLowerCase().trim() };
     default:
       return state;
