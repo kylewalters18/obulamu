@@ -1,8 +1,8 @@
 import { List, ListItem } from 'material-ui/List';
 import React, { PropTypes } from 'react';
 
-import CommunicationChatBubble from 'material-ui/svg-icons/communication/chat-bubble';
 import { Link } from 'react-router';
+import Person from 'material-ui/svg-icons/social/person';
 import Subheader from 'material-ui/Subheader';
 
 const App = props => (
@@ -14,23 +14,11 @@ const App = props => (
           key={i}
           primaryText={`${d.first_name}  ${d.last_name}`}
           containerElement={<Link to={`/patient/${d.id}`} />}
-          rightIcon={<CommunicationChatBubble />}
+          rightIcon={<Person />}
         />
        )}
     </List>
   </div>
-
-  //   <div>First Name, Last Name, Age</div>
-  //   <ul>
-  //     {props.patients.map((d, i) =>
-  //       <li key={i}>
-  //         <Link to={`/patient/${d.id}`}>
-  //           {d.first_name} {d.last_name}, {d.age}
-  //         </Link>
-  //       </li>
-  //           )}
-  //   </ul>
-  // </div>
 );
 
 App.propTypes = {
