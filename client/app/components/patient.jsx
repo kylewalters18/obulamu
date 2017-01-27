@@ -8,7 +8,7 @@ const Patient = props => (
     <AppbarContainer />
     <Card>
       <CardHeader
-        title={props.firstName + ' ' + props.lastName}
+        title={`${props.firstName} ${props.lastName}`}
         subtitle={props.address}
         actAsExpander={true}
         showExpandableButton={true}
