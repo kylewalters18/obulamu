@@ -4,6 +4,7 @@ from server.app import views
 
 router = routers.DefaultRouter()
 router.register(r'patients', views.PatientViewSet)
+router.register(r'notes', views.NoteViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

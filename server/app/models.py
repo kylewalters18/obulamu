@@ -26,3 +26,8 @@ class Treatment(models.Model):
     date = models.DateField(default='2016-11-16')
     description = models.CharField(max_length=2000)
     patient = models.ForeignKey(Patient, related_name='treatments', on_delete=models.CASCADE)
+
+class Note(models.Model):
+    datetime = models.DateTimeField(default='2017-01-28T09:32:00')
+    note = models.CharField(max_length=2000)
+    patient = models.ForeignKey(Patient, related_name='notes', on_delete=models.CASCADE)

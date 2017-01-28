@@ -21,6 +21,7 @@ export const addPatient = (firstName, lastName, address, dob) => (dispatch) => {
       medications: [],
       visits: [],
       treatments: [],
+      notes: [],
     })
     .then(() => dispatch(loadPatients()))
     .catch(error => console.log(error));

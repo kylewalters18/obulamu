@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from server.app.models import Patient, Medication, Visit, Treatment
+from server.app.models import Patient, Medication, Visit, Treatment, Note
 
 
 class MedicationSerializer(serializers.ModelSerializer):
@@ -13,12 +13,15 @@ class VisitSerializer(serializers.ModelSerializer):
         model = Visit
         fields = ('id', 'date', 'notes')
 
-
 class TreatmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Treatment
         fields = ('id', 'description')
 
+class NoteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Note
+        fields = ('id', 'datetime', 'note')
 
 class PatientSerializer(serializers.ModelSerializer):
     medications = MedicationSerializer(many=True)
@@ -34,12 +37,14 @@ class PatientSerializer(serializers.ModelSerializer):
                   'dob',
                   'medications',
                   'visits',
-                  'treatments')
+                  'treatments',
+                  'notes')
 
     def create(self, validated_data):
         medications_data = validated_data.pop('medications')
         visits_data = validated_data.pop('visits')
         treatments_data = validated_data.pop('treatments')
+        notes_data = validated_data.pop('notes')
         patient = Patient.objects.create(**validated_data)
 
         for medication_data in medications_data:
@@ -50,5 +55,8 @@ class PatientSerializer(serializers.ModelSerializer):
 
         for treatment_data in treatments_data:
             Treatment.objects.create(patient=patient, **treatment_data)
+        
+        for note_data in notes_data:
+            Note.objects.create(patient=patient, **treatment_data)
 
         return patient
