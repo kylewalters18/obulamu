@@ -12,7 +12,13 @@ class PatientViewSet(viewsets.ModelViewSet):
 
 class NoteViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows notes to be viewed or edited.
+    API endpoint that allows notes to be viewed or edited
     """
-    queryset = Note.objects.all()
     serializer_class = NoteSerializer
+
+    def get_queryset(self):
+      """
+      This view should return all the notes for the specified patient
+      """
+      patient = self.kwargs['patient']
+      return Note.objects.filter(patient=patient)

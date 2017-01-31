@@ -1,14 +1,18 @@
 import React, { PropTypes } from 'react';
+
 import RaisedButton from 'material-ui/RaisedButton';
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
-import AppbarContainer from 'containers/appbar-container';
+import TextField from 'material-ui/TextField';
 
+import AppbarContainer from 'containers/appbar-container';
+import NotesListContainer from 'containers/notes-list-container';
+import NewNoteContainer from 'containers/new-note-container';
 const Patient = props => (
   <div>
     <AppbarContainer />
     <Card>
       <CardHeader
-        title={`${props.firstName} ${props.lastName}`}
+        title={`${props.firstName} ${props.lastName} ${props.id}`}
         subtitle={props.address}
         actAsExpander={true}
         showExpandableButton={true}
@@ -16,14 +20,10 @@ const Patient = props => (
       <CardText>
       </CardText>
     </Card>
-    <RaisedButton
-      label="Add Note"
-      primary
-    />
-    <RaisedButton
-      label="Add Vitals"
-      primary
-    />
+    {/*
+    <NewNoteContainer />
+    <NoteListContainer />
+    */}
   </div>
 );
 
