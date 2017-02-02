@@ -17,8 +17,9 @@ class NoteViewSet(viewsets.ModelViewSet):
     serializer_class = NoteSerializer
 
     def get_queryset(self):
-      """
-      This view should return all the notes for the specified patient
-      """
-      patient = self.kwargs['patient']
-      return Note.objects.filter(patient=patient)
+        """
+        This view should return all the notes for the specified patient
+        """
+
+        patientId = self.kwargs['patient']
+        return Note.objects.filter(patient__id=patientId)

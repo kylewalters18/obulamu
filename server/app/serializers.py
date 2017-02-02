@@ -21,7 +21,7 @@ class TreatmentSerializer(serializers.ModelSerializer):
 class NoteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Note
-        fields = ('id', 'datetime', 'note')
+        fields = ('id', 'datetime', 'note', 'patient')
 
 class PatientSerializer(serializers.ModelSerializer):
     medications = MedicationSerializer(many=True)
@@ -55,7 +55,7 @@ class PatientSerializer(serializers.ModelSerializer):
 
         for treatment_data in treatments_data:
             Treatment.objects.create(patient=patient, **treatment_data)
-        
+
         for note_data in notes_data:
             Note.objects.create(patient=patient, **treatment_data)
 
