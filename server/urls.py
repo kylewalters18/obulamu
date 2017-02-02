@@ -9,7 +9,7 @@ router.register(r'patients', views.PatientViewSet)
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     url(r'^', include(router.urls)),
-    url(r'^notes/$', views.NoteViewSet.as_view({'post': 'create'})),
-    url(r'^notes/(?P<patient>.+)/$', views.NoteViewSet.as_view({'get': 'list'})),
+    url(r'^notes/(?P<patient>.+)/$', 
+        views.NoteViewSet.as_view({'get': 'list', 'post': 'create'})),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

@@ -16,7 +16,7 @@ function mapDispatchToProps(dispatch) {
   return {
     updateNewNote: newNote => dispatch(updateNewNote(newNote)),
     addNote: (newNote, patient) =>
-      dispatch(addNewNote(newNote, patient)),
+      dispatch(addNote(newNote, patient)),
   };
 }
 
