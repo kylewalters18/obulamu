@@ -5,9 +5,9 @@ const receiveNotes = makeActionCreator('RECEIVE_NOTES', 'notes');
 export const loadNotes = () => (dispatch, getState) => {
     // async call to get the new data
   const state = getState();
-  const curPatientId = state.curPatientId;
+  const curPatient = state.curPatient;
   axios
-    .get(`${process.env.API_URL}/notes/${curPatientId}`, {
+    .get(`${process.env.API_URL}/patients/${curPatient}/notes/`, {
       headers: { 'X-Requested-With': 'XMLHttpRequest' },
     })
     .then(response => dispatch(receiveNotes(response.data)));

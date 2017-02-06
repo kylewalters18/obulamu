@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 import Person from 'material-ui/svg-icons/social/person';
 import Subheader from 'material-ui/Subheader';
 
-const App = props => (
+const PatientList = props => (
   <div>
     <List>
       <Subheader>Patients</Subheader>
@@ -21,8 +21,8 @@ const App = props => (
   </div>
 );
 
-App.propTypes = {
+PatientList.propTypes = {
   patients: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-export default App;
+export default PatientList;

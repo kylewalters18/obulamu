@@ -4,7 +4,7 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import Subheader from 'material-ui/Subheader';
 
-const App = props => (
+const NotesList = props => (
   <div>
     <List>
       <Subheader>Notes</Subheader>
@@ -18,8 +18,8 @@ const App = props => (
   </div>
 );
 
-App.propTypes = {
+NotesList.propTypes = {
   notes: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-export default App;
+export default NotesList;

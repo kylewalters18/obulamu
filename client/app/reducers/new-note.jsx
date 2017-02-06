@@ -1,5 +1,3 @@
-const formatDate = date => new Date(date).toJSON().split('T')[0];
-
 const newNote = (state = {
   note: '',
   datetime: '',
@@ -8,6 +6,8 @@ const newNote = (state = {
   switch (action.type) {
     case 'UPDATE_NEW_NOTE':
       return { ...state, newNote: action.newNote };
+    case 'UPDATE_NEW_NOTE_DATE_TIME':
+      return { ...state, newNoteDateTime: action.newNoteDateTime };
     case 'ADD_NEW_NOTE':
       return { ...state,
         note: '',

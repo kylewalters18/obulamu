@@ -9,4 +9,4 @@ const notes = (state = {
   }
 };
 
-export default patients;
+export default notes;

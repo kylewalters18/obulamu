@@ -3,18 +3,16 @@ import { loadNotes } from 'actions/note';
 import makeActionCreator from 'actions/util';
 
 export const updateNewNote = makeActionCreator('UPDATE_NEW_NOTE', 'newNote');
-
+export const updateNoteDateTime = makeActionCreator('UPDATE_NEW_NOTE_DATE_TIME', 'newNoteDateTime');
 export const beginAddNote = makeActionCreator('ADD_NEW_NOTE');
 
-export const addNote = (newNote, getState) => (dispatch) => {
+export const addNote = (newNote, newNoteDateTime, curPatient) => (dispatch) => {
   dispatch(beginAddNote());
-  const state = getState();
-  const curPatient = state.curPatient;
-  const noteDateTime = state.noteDateTime;
+
   axios
-    .post(`${process.env.API_URL}/notes/`, {
-      datetime: noteDateTime,
+    .post(`${process.env.API_URL}/patient/${curPatient}/notes/`, {
       note: newNote,
+      datetime: newNoteDateTime,
       patient: curPatient,
     })
     .then(() => dispatch(loadNotes()))

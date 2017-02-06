@@ -1,4 +1,4 @@
-import Appbar from 'components/notes-list';
+import NotesList from 'components/notes-list';
 import { connect } from 'react-redux';
 
 function mapStateToProps() {
@@ -12,6 +12,6 @@ function mapDispatchToProps() {
 const NotesListContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Appbar);
+)(NotesList);
 
 export default NotesListContainer;

@@ -1,7 +1,7 @@
 import Appbar from 'components/appbar';
 import { connect } from 'react-redux';
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps() {
   return {};
 }
 

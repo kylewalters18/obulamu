@@ -16,7 +16,7 @@ const Patient = props => (
       />
       <CardText />
     </Card>
-    {/*
+    {/*}
     <NewNoteContainer />
     <NotesListContainer />
     */}
