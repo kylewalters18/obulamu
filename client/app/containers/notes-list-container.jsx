@@ -1,8 +1,10 @@
 import NotesList from 'components/notes-list';
 import { connect } from 'react-redux';
 
-function mapStateToProps() {
-  return {};
+function mapStateToProps(state) {
+  return {
+    notes: state.notes.notes.all(),
+  };
 }
 
 function mapDispatchToProps() {

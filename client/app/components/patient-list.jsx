@@ -14,6 +14,7 @@ const PatientList = props => (
           key={i}
           primaryText={`${d.first_name}  ${d.last_name}`}
           containerElement={<Link to={`/patient/${d.id}`} />}
+          onClick={() => props.updateCurPatient(d.id)}
           rightIcon={<Person />}
         />
        )}
@@ -23,6 +24,7 @@ const PatientList = props => (
 
 PatientList.propTypes = {
   patients: PropTypes.arrayOf(PropTypes.object).isRequired,
+  updateCurPatient: PropTypes.func.isRequired,
 };
 
 export default PatientList;

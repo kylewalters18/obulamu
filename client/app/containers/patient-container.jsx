@@ -1,3 +1,4 @@
+import { loadNotes } from 'actions/note';
 import Patient from 'components/patient';
 import { connect } from 'react-redux';
 
@@ -6,14 +7,17 @@ function mapStateToProps(state, ownProps) {
   return {
     firstName: patient.first_name,
     lastName: patient.last_name,
-    dob: patient.DOB,
+    dob: patient.dob,
     address: patient.address,
     id: patient.id,
+    curPatient: state.patients.curPatient,
   };
 }
 
-function mapDispatchToProps() {
-  return {};
+function mapDispatchToProps(dispatch) {
+  return {
+    loadNotes: () => dispatch(loadNotes()),
+  };
 }
 
 const PatientContainer = connect(

@@ -1,3 +1,4 @@
+import { updateCurPatient } from 'actions/patient';
 import PatientList from 'components/patient-list';
 import { connect } from 'react-redux';
 
@@ -13,8 +14,10 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps() {
-  return {};
+function mapDispatchToProps(dispatch) {
+  return {
+    updateCurPatient: curPatient => dispatch(updateCurPatient(curPatient)),
+  };
 }
 
 const PatientListContainer = connect(
