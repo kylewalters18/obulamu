@@ -9,14 +9,16 @@ const NewNote = props =>
       floatingLabelText="new note"
       value={props.newNote}
       onChange={event => props.updateNewNote(event.target.value)}
-    /><br />
+    />
+    <br />
     <RaisedButton
       label="Add Note"
       primary
       value={props.newNote}
       onClick={() => props.addNote(
         props.newNote,
-        props.currentPatient
+        props.newNoteDateTime,
+        props.patient,
       )}
     />
   </div>;
@@ -24,10 +26,10 @@ const NewNote = props =>
 
 NewNote.propTypes = {
   updateNewNote: PropTypes.func.isRequired,
-  updateCurrentPatient: PropTypes.func.isRequired,
   addNote: PropTypes.func.isRequired,
   newNote: PropTypes.string.isRequired,
-  currentPatient: PropTypes.number.isRequired,
+  newNoteDateTime: PropTypes.string.isRequired,
+  patient: PropTypes.number.isRequired,
 };
 
 export default NewNote;

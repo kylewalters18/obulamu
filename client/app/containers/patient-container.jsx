@@ -1,6 +1,5 @@
 import Patient from 'components/patient';
 import { connect } from 'react-redux';
-import { updateCurPatient } from 'actions/patient';
 
 function mapStateToProps(state, ownProps) {
   const patient = state.patients.patients.find(d => d.id === Number(ownProps.params.id));
@@ -13,9 +12,8 @@ function mapStateToProps(state, ownProps) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-  };
+function mapDispatchToProps() {
+  return {};
 }
 
 const PatientContainer = connect(

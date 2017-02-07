@@ -8,9 +8,8 @@ export const beginAddNote = makeActionCreator('ADD_NEW_NOTE');
 
 export const addNote = (newNote, newNoteDateTime, curPatient) => (dispatch) => {
   dispatch(beginAddNote());
-
   axios
-    .post(`${process.env.API_URL}/patient/${curPatient}/notes/`, {
+    .post(`${process.env.API_URL}/patients/${curPatient}/notes/`, {
       note: newNote,
       datetime: newNoteDateTime,
       patient: curPatient,
