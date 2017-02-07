@@ -7,10 +7,10 @@ const NotesList = props => (
   <div>
     <List>
       <Subheader>Notes</Subheader>
-      {props.notes.map((d, i) =>
+      {props.notes.map((item, i) =>
         <ListItem
           key={i}
-          primaryText={d.note}
+          primaryText={item.note}
         />
        )}
     </List>

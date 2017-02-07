@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 function mapStateToProps(state) {
   return {
-    notes: state.notes.notes.all(),
+    notes: state.notes.notes,
   };
 }
 

@@ -22,6 +22,8 @@ class Patient extends React.Component {
           />
           <CardText />
         </Card>
+        <NewNoteContainer />
+        <NotesListContainer />
       </div>
     );
   }
