@@ -3,6 +3,32 @@ Obulamu is the Lugandan word for life. Obulama is medical records charting appli
 
 Below are instructions on how to set up your development environment.
 
+## Using Vagrant
+make sure you have Vagrant and Virtual Box installed on your device
+Build VM from Vagrantfile 
+```bash
+vagrant up
+```
+
+SSH into VM
+```bash
+vagrant ssh
+```
+
+Start the Webpack Dev Server
+```bash
+npm start
+visit your app at localhost:8080
+```
+
+Start the Django Web Server
+```bash
+python manage.py runserver 0.0.0.0:8000
+visit your api at localhost:8000
+```
+
+## Without Vagrant 
+
 ## Running / Development
 
 Install requirements
