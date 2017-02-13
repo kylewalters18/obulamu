@@ -10,7 +10,7 @@
     "lint": "eslint -c .eslintrc --ext .jsx client/app/**",
     "dev": "webpack -d --watch",
     "build": "webpack -p",
-    "start": "webpack-dev-server --content-base client/public --inline --hot --history-api-fallback"
+    "start": "webpack-dev-server --host 0.0.0.0 --public 0.0.0.0:8080 --watch-poll --content-base client/public --inline --hot --history-api-fallback"
   },
   "repository": {
     "type": "git",
