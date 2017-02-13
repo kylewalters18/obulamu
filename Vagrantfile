@@ -1,6 +1,5 @@
 Vagrant.configure(2) do |config|
-        #config.vm.box = "ubuntu/trusty64"
-        config.vm.box = "bento/ubuntu-16.10"
+        config.vm.box = "ubuntu/trusty64"
 
         #set up synced project folder
         #disable default
