@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/bash 
 
 #change cur dir to the code's home directory 
 cd /home/vagrant/obulamu
