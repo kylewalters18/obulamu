@@ -27,6 +27,6 @@ class NoteViewSet(viewsets.ModelViewSet):
         patientId = self.kwargs['patient']
         if 'note' in self.kwargs:
             noteId = self.kwargs['note']
-            return Note.objects.filter(patient__id=patientId).filter(id=noteId)
+            return Note.objects.filter(patient__id=patientId).filter(id=noteId).order_by('-datetime')
         else:
-            return Note.objects.filter(patient__id=patientId)
+            return Note.objects.filter(patient__id=patientId).order_by('-datetime')
