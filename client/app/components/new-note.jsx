@@ -10,19 +10,21 @@ const NewNote = props =>
     <TextField
       floatingLabelText="new note"
       value={props.newNote}
-      fullWidth={ true }
-      multiLine={ true }
+      fullWidth={true}
+      multiLine={true}
       rows={4}
       onChange={event => props.updateNewNote(event.target.value)}
     />
     <DatePicker
       hintText="note date"
       mode="landscape"
+      onFocus={(event, date) => props.updateNewNoteDate(date)}
       onChange={(event, date) => props.updateNewNoteDate(date)}
     />
     <TimePicker
       format="24hr"
       hintText="note time"
+      onFocus={(event, time) => props.updateNewNoteTime(time)}
       onChange={(event, time) => props.updateNewNoteTime(time)}
     />
     <br />
@@ -47,7 +49,6 @@ NewNote.propTypes = {
   newNote: PropTypes.string.isRequired,
   newNoteDate: PropTypes.string.isRequired,
   newNoteTime: PropTypes.string.isRequired,
-  patient: PropTypes.number.isRequired,
 };
 
 export default NewNote;

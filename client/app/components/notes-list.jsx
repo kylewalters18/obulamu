@@ -1,16 +1,16 @@
 import { List, ListItem } from 'material-ui/List';
 import React, { PropTypes } from 'react';
 
-import Subheader from 'material-ui/Subheader';
+const formatDateTime = dateTime => new Date(dateTime).toLocaleString();
 
 const NotesList = props => (
   <div>
     <List>
-      <Subheader>Notes</Subheader>
       {props.notes.map((item, i) =>
         <ListItem
           key={i}
           primaryText={item.note}
+          secondaryText={formatDateTime(item.datetime)}
         />
        )}
     </List>
