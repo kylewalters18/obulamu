@@ -10,6 +10,8 @@ class Patient extends React.Component {
 
   componentDidMount() {
     this.props.loadNotes();
+    this.props.updateNewNoteDate(Date.now());
+    this.props.updateNewNoteTime(Date.now());
   }
   render() {
     return (
@@ -31,6 +33,8 @@ class Patient extends React.Component {
 
 Patient.propTypes = {
   loadNotes: PropTypes.func.isRequired,
+  updateNewNoteDate: PropTypes.func.isRequired,
+  updateNewNoteTime: PropTypes.func.isRequired,
   firstName: PropTypes.string.isRequired,
   lastName: PropTypes.string.isRequired,
   address: PropTypes.string.isRequired,

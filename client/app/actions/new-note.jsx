@@ -19,5 +19,7 @@ export const addNote = (newNote, newNoteDate, newNoteTime) => (dispatch, getStat
       patient: curPatient,
     })
     .then(() => dispatch(loadNotes()))
+    .then(() => dispatch(updateNewNoteDate(Date.now())))
+    .then(() => dispatch(updateNewNoteTime(Date.now())))
     .catch(error => console.log(error));
 };

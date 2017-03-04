@@ -1,4 +1,5 @@
 import { loadNotes } from 'actions/note';
+import { updateNewNoteDate, updateNewNoteTime } from 'actions/new-note';
 import Patient from 'components/patient';
 import { connect } from 'react-redux';
 
@@ -17,6 +18,12 @@ function mapStateToProps(state, ownProps) {
 function mapDispatchToProps(dispatch) {
   return {
     loadNotes: () => dispatch(loadNotes()),
+    updateNewNoteDate: (date) => {
+      dispatch(updateNewNoteDate(date));
+    },
+    updateNewNoteTime: (time) => {
+      dispatch(updateNewNoteTime(time));
+    },
   };
 }
 
